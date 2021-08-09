@@ -12,13 +12,14 @@
 
 <script>
 import {FrownTwoTone} from '@ant-design/icons-vue'
+import {defineComponent} from 'vue';
 
-export default {
+export default defineComponent({
   name: "NotFound",
   components: {
     FrownTwoTone,
   }
-}
+})
 </script>
 
 <style scoped>

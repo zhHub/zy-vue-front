@@ -8,10 +8,11 @@
 </template>
 
 <script>
-import Logo from "@/components/layout/sider/logo";
-import ZyMenu from "@/components/layout/sider/menu"
+import Logo from "./logo";
+import ZyMenu from "./menu"
+import {defineComponent, ref} from 'vue';
 
-export default {
+export default defineComponent({
   name: "Sider",
   components: {
     Logo,
@@ -23,7 +24,7 @@ export default {
       type: Boolean
     }
   },
-}
+})
 </script>
 
 <style scoped>

@@ -5,13 +5,15 @@
 </template>
 
 <script>
-export default {
+import {defineComponent} from 'vue';
+
+export default defineComponent({
   name: "Header"
-}
+})
 </script>
 
 <style scoped>
-.header{
+.header {
   width: 100%;
   color: #b61010;
   text-align: right;

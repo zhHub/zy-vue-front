@@ -4,12 +4,18 @@
                     class="layout-sider"
                     collapsible>
       <Sider :collapsed="collapsed"/>
-
+    
     </a-layout-sider>
     <a-layout class="ant-layout">
-      <a-layout-header class="ant-layout-header"><Header /></a-layout-header>
-      <a-layout-content class="layout-content"><Content /></a-layout-content>
-      <a-layout-footer class="ant-layout-footer"><Footer /></a-layout-footer>
+      <a-layout-header class="ant-layout-header">
+        <Header/>
+      </a-layout-header>
+      <a-layout-content class="ant-layout-content">
+        <Content/>
+      </a-layout-content>
+      <a-layout-footer class="ant-layout-footer">
+        <Footer/>
+      </a-layout-footer>
     </a-layout>
   </a-layout>
 
@@ -18,12 +24,14 @@
 <script>
 
 
-import Footer from "@/components/layout/footer";
-import Header from "@/components/layout/header";
-import Content from "@/components/layout/content";
-import Sider from "@/components/layout/sider";
+import Footer from "./footer";
+import Header from "./header";
+import Content from "./content";
+import Sider from "./sider";
+import {defineComponent, ref} from 'vue';
 
-export default {
+
+export default defineComponent({
   name: "Layout",
   components: {
     Sider,
@@ -33,12 +41,12 @@ export default {
   },
   setup() {
     const collapsed = false;
-
+    
     return {
       collapsed,
     }
   }
-}
+})
 </script>
 
 <style scoped>

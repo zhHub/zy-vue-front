@@ -11,12 +11,12 @@
 </template>
 
 <script>
+import {defineComponent} from 'vue';
 
-export default {
+export default defineComponent({
   name: "500",
-  components: {
-  }
-}
+  components: {}
+})
 </script>
 
 <style scoped>

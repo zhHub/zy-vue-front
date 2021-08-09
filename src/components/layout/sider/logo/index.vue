@@ -20,10 +20,11 @@
 </template>
 
 <script>
-import router from "@/router";
-import {interceptString} from "@/utils/base-utils";
+import router from "../../../../router";
+import {interceptString} from "../../../../utils/base-utils";
+import {defineComponent} from 'vue';
 
-export default {
+export default defineComponent({
   name: "Logo",
   props: {
     collapsed: false,
@@ -35,7 +36,7 @@ export default {
     }
   },
   computed: {
-    interceptString(){
+    interceptString() {
       return interceptString(this.name, 7)
     }
   },
@@ -44,7 +45,7 @@ export default {
       router.push("/");
     },
   },
-}
+})
 </script>
 
 <style scoped>

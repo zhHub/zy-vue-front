@@ -1,5 +1,5 @@
 import {createApp} from 'vue'
-import App from './App.vue'
+import App from './App'
 import router from './router'
 import {
     Button,
@@ -9,7 +9,8 @@ import {
     ConfigProvider,
     Image,
     Avatar,
-    Space
+    Space,
+    Grid
 } from 'ant-design-vue'
 
 let app = createApp(App);
@@ -22,4 +23,5 @@ app.use(ConfigProvider);
 app.use(Image);
 app.use(Avatar);
 app.use(Space);
+app.use(Grid );
 app.mount('#app');
