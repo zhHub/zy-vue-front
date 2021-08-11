@@ -2,7 +2,6 @@
   <div class="logo">
     <a-space
       size="middle"
-      align="center"
     >
       <a-avatar
         :src="src"
@@ -22,17 +21,19 @@
 <script>
 import router from "../../../../router";
 import {interceptString} from "../../../../utils/base-utils";
-import {defineComponent} from 'vue';
+import {defineComponent, ref} from 'vue';
 
 export default defineComponent({
   name: "Logo",
   props: {
     collapsed: false,
   },
-  data() {
+  setup() {
+    const src = ref('https://portrait.gitee.com/uploads/avatars/user/1729/5188703_Zjy15_1578982040.png!avatar200');
+    const name = ref('幼年星辰');
     return {
-      src: 'https://portrait.gitee.com/uploads/avatars/user/1729/5188703_Zjy15_1578982040.png!avatar200',
-      name: '幼年星辰'
+      src,
+      name
     }
   },
   computed: {

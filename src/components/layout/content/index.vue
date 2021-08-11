@@ -1,17 +1,26 @@
 <template>
   <div class="content-tabs">
+    
     <router-view/>
   </div>
 </template>
 
 <script>
-import {defineComponent} from 'vue';
+import {defineComponent, toRef} from 'vue';
 
 export default defineComponent({
   name: "Content",
-  setup() {
-    
-    return {};
+  props: {
+    count: {
+      type: Number,
+      default: 12
+    },
+  },
+  setup(props) {
+    const count = toRef(props, 'count');
+    return {
+      count,
+    };
   },
   
 })

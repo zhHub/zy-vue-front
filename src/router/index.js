@@ -1,19 +1,19 @@
 import {createRouter, createWebHashHistory} from 'vue-router'
+import {push} from "../components/layout/sider/menu";
 
 const routes = [
     {
         path: '/',
         name: 'layout',
         component: () => import('../components/layout/index'),
+        redirect:{
+            name: 'dashboard'
+        },
         children: [
             {
-                path: '/',
+                path: '/dashboard',
                 name: 'dashboard',
                 component: () => import('../views/dashboard/index'),
-                meta: {
-                    /* 使用小写 keepalive 可以生效 */
-                    keepalive: true,
-                }
             },
             {
                 path: '/test',
@@ -33,6 +33,16 @@ const routes = [
         ],
     },
 ]
+const dashboard = {
+    name: 'dashboard',
+    router: '/dashboard'
+};
+push(dashboard);
+const test = {
+    name: 'test',
+    router: '/test'
+};
+push(test);
 
 const router = createRouter({
     history: createWebHashHistory(),

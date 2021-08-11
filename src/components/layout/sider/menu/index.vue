@@ -30,7 +30,7 @@ export default defineComponent({
     const menuAll = menu;
     
     const routTo = (value) => {
-      router.push({name: value.router})
+      router.push({name: value.name})
     };
     
     return {
