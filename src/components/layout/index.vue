@@ -10,8 +10,8 @@
       <a-layout-header class="ant-layout-header">
         <Header name="123" :count="count"/>
       </a-layout-header>
-<!--      vue marquee <a-alert :message="text" type="info" closable
-               style="margin: 10px 10px 0 10px;background-color:#fff;border: 0"/>-->
+      <a-alert :message="count" type="info" closable
+               style="margin: 10px 10px 0 10px;background-color:#fff;border: 0"/>
       <a-layout-content class="ant-layout-content" style="margin: 10px 10px 0 10px;">
         <Content :count="count"/>
       </a-layout-content>
@@ -40,9 +40,6 @@ export default defineComponent({
     Content,
     Header,
     Footer,
-  },
-  data() {
-    return {}
   },
   setup() {
     const collapsed = false;

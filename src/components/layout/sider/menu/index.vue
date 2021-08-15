@@ -2,24 +2,38 @@
   <a-menu
     :inline-collapsed="collapsed"
     theme="dark"
-    style="margin-left: 10px"
+    mode="inline"
   >
-    <a-menu-item v-for="(menu,i) in menuAll" :key="i" @click="routTo(menu)">
-         <span>
-            {{ menu.name }}
-          </span>
-    </a-menu-item>
+    <template v-for="(menu,i) in menuAll">
+      <a-sub-menu :key="menu.id"
+                  v-if="menu.submenu && menu.submenu.length > 0">
+        <template #icon>
+          <UnorderedListOutlined/>
+        </template>
+        <template #title>
+          {{ menu.name }}
+        </template>
+        <a-menu-item v-for="(submenu,index) in menu.submenu" :key="submenu.id" @click="routTo(submenu)">
+          <UnorderedListOutlined/>
+          {{ submenu.name }}
+        </a-menu-item>
+      </a-sub-menu>
+      <a-menu-item :key="menu.id" @click="routTo(menu)" v-else>
+        <UnorderedListOutlined/>
+        {{ menu.name }}
+      </a-menu-item>
+    </template>
   </a-menu>
 </template>
 
 <script>
-import {PieChartOutlined} from '@ant-design/icons-vue';
-import {defineComponent} from 'vue';
+import {UnorderedListOutlined} from '@ant-design/icons-vue'
+import {defineComponent, ref} from 'vue';
 import router from "../../../../router";
 
 export default defineComponent({
   name: "ZyMenu",
-  components: {PieChartOutlined},
+  components: {UnorderedListOutlined},
   props: {
     collapsed: {
       // 侧边栏菜单是否收起
@@ -28,7 +42,6 @@ export default defineComponent({
   },
   setup() {
     const menuAll = menu;
-    
     const routTo = (value) => {
       router.push({name: value.name})
     };

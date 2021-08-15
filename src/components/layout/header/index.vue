@@ -25,14 +25,11 @@ import {defineComponent, ref, toRef} from 'vue';
 export default defineComponent({
   name: "Header",
   props: {
-    count: {
-      type: Number,
-      default: 12
-    },
+    count: Number,
     name: String,
   },
   setup(props) {
-    const count = toRef(props, 'count');
+    const count = ref(toRef(props, 'count').value);
     const src = ref('https://portrait.gitee.com/uploads/avatars/user/1729/5188703_Zjy15_1578982040.png!avatar200');
     const name = toRef(props, 'name');
     const overflowCount = ref(100);
