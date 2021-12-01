@@ -22,6 +22,8 @@ import {
     Select,
     Switch,
     Radio,
+    Divider,
+    Card,
     Modal
 } from 'ant-design-vue'
 import * as Icons from "@ant-design/icons-vue";
@@ -29,6 +31,7 @@ import * as Icons from "@ant-design/icons-vue";
 
 let app = createApp(App);
 /* 按需引入 antD 组件 */
+app.use(Card);
 app.use(router);
 app.use(Button);
 app.use(Layout);
@@ -57,6 +60,7 @@ app.use(Select);
 app.use(Switch);
 app.use(Radio);
 app.use(Modal);
+app.use(Divider );
 for (const i in Icons) {
     app.component(i, Icons[i]);
 }

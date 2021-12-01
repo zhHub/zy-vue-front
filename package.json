@@ -12,7 +12,9 @@
     "ant-design-vue": "^2.2.2",
     "babel-plugin-import": "^1.13.3",
     "core-js": "^3.6.5",
+    "js-base64": "^3.7.2",
     "less-loader": "^10.0.1",
+    "moment": "^2.29.1",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",
     "webpack": "^4.23.0"

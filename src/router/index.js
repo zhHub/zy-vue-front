@@ -7,7 +7,7 @@ const routes = [
         name: 'layout',
         component: () => import('../components/layout/index'),
         redirect: {
-            name: 'dashboard'
+            name: 'login'
         },
         children: [
             {
@@ -19,6 +19,11 @@ const routes = [
                 path: '/test',
                 name: 'test',
                 component: () => import('../views/test/index'),
+            },
+            {
+                path: 'toggle-name-description',
+                name: 'toggle-name-description',
+                component: () => import('../views/toggle/toggle-name-description/index'),
             },
             {
                 path: '/500',
@@ -59,10 +64,17 @@ const routes = [
             },
         ]
     },
+    {
+        path: '/login',
+        name: 'login',
+        component: () => import('../components/login/index'),
+    },
 ]
 let i = 1;
 const dashboard = {id: i++, name: 'dashboard', icon: 'pieChartOutlined', submenu: []};
 push(dashboard);
+const toggleNameDescription = {id: i++, name: 'toggle-name-description', icon: 'PieChartOutlined', submenu: []};
+push(toggleNameDescription);
 const test = {id: i++, name: 'test', icon: 'PieChartOutlined', submenu: []};
 push(test);
 const submenuSamples = [
